@@ -1,2 +1,37 @@
 # CRUD-API
 Simple CRUD Api using express and mongoDB
+
+
+Visit: https://stormlite.herokuapp.com/ and use the search to pull the current weather alerts, and forcasts for your City. 
+The Api portion of the app exists on the following endpoints:
+
+GET: https://stormlite.herokuapp.com/api/weatherApi - Get All forcasts
+GET: https://stormlite.herokuapp.com/api/weatherApi/:forcastId - Get a Single forcast
+POST: https://stormlite.herokuapp.com/api/weatherApi - Body:
+{
+    "location": String,
+    "degrees": Number,
+    "forcast": String
+}
+UPDATE: https://stormlite.herokuapp.com/api/weatherApi/:forcastId - Body:
+{
+    "location": "Austin, Texas",
+    "degrees": 93.67,
+    "forcast": "forcast"
+} 
+DELETE: https://stormlite.herokuapp.com/api/weatherApi/:forcastId 
+
+This app uses a file /config/config.env along with the dotenv module to configure Environment Variables. 
+You must configure the file with the following using your own values:
+MONGO_DB_USER=
+MONGO_DB_PW=
+ATLAS_URL=
+WEATHER_STACK_KEY=
+GEOCODE_TOKEN=
+DEV_URL=http://localhost:3000/api/weatherApi/
+
+For additional resources like weatherStack, and Geocode, you must present your own Authorization tokens and keys
+https://weatherstack.com/documentation
+https://docs.mapbox.com/api/overview/
+
+These resources are free for the most part and available to the public
